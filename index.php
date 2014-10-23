@@ -23,6 +23,11 @@ $count = count($items);
 // -- Render
 if (!empty($items)) : ?>
 <div id="<?php echo $cck->id_class ? trim($cck->id_class) : 'generic-slideshow'; ?>" class="carousel-slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+  <?php for($i = 0; $i < $count; $i++) : ?>
+    <li data-target="#<?php echo $cck->id_class ? trim($cck->id_class) : 'generic-slideshow'; ?>" data-slide-to="<?php echo $i ?>"<?php echo $i == 0 ? 'class="active"' : null;?>></li>
+  <?php endfor; ?>
+  </ol>
 	<div class="carousel-inner">
 	<?php foreach ($items as $key => $item) : ?>
 		<div class="item">
@@ -30,6 +35,10 @@ if (!empty($items)) : ?>
 		</div>
 	<?php endforeach; ?>
 	</div>
+	<?php if($count > 1): ?>
+  <a class="left carousel-control" href="#<?php echo $cck->id_class ? trim($cck->id_class) : 'generic-slideshow'; ?>" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right carousel-control" href="#<?php echo $cck->id_class ? trim($cck->id_class) : 'generic-slideshow'; ?>" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+<?php endif; ?>
 </div>
 <?php endif;
 

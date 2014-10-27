@@ -19,13 +19,14 @@ if ($cck->initialize() === false)
 // -- Prepare
 $items = $cck->getItems();
 $count = count($items);
+$id    = !empty($cck->id_class) ? trim($cck->id_class) : 'generic-slideshow';
 
 // -- Render
 if (!empty($items)) : ?>
-<div id="<?php echo $cck->id_class ? trim($cck->id_class) : 'generic-slideshow'; ?>" class="carousel-slide" data-ride="carousel">
+<div id="<?php echo $id; ?>" class="carousel-slide" data-ride="carousel">
 	<ol class="carousel-indicators">
   <?php for($i = 0; $i < $count; $i++) : ?>
-    <li data-target="#<?php echo $cck->id_class ? trim($cck->id_class) : 'generic-slideshow'; ?>" data-slide-to="<?php echo $i ?>"<?php echo $i == 0 ? 'class="active"' : null;?>></li>
+    <li data-target="#<?php echo $id; ?>" data-slide-to="<?php echo $i ?>"<?php echo $i == 0 ? 'class="active"' : null;?>></li>
   <?php endfor; ?>
   </ol>
 	<div class="carousel-inner">
@@ -36,8 +37,8 @@ if (!empty($items)) : ?>
 	<?php endforeach; ?>
 	</div>
 	<?php if($count > 1): ?>
-  <a class="left carousel-control" href="#<?php echo $cck->id_class ? trim($cck->id_class) : 'generic-slideshow'; ?>" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-  <a class="right carousel-control" href="#<?php echo $cck->id_class ? trim($cck->id_class) : 'generic-slideshow'; ?>" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+  <a class="left carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 <?php endif; ?>
 </div>
 <?php endif;

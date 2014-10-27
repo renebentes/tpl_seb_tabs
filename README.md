@@ -1,7 +1,7 @@
 Slideshow - tpl_seb_slideshow
 =============
 
-Template Seblod para exibição de slideshow.
+Template Seblod para exibição de slideshow de artigos.
 
 Requirements
 ------------

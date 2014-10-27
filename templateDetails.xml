@@ -30,7 +30,9 @@
 	</files>
 	<languages folder="languages">
 		<language tag="en-GB">en-GB/en-GB.tpl_seb_slideshow.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_seb_slideshow.sys.ini</language>
 		<language tag="pt-BR">pt-BR/pt-BR.tpl_seb_slideshow.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.tpl_seb_slideshow.sys.ini</language>
 	</languages>
 	<positions>
 		<position />

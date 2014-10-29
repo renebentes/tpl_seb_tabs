@@ -21,9 +21,25 @@ $items = $cck->getItems();
 $count = count($items);
 $id    = !empty($cck->id_class) ? trim($cck->id_class) : 'generic-slideshow';
 
+if ($cck->getStyleParam('navigator') == 1)
+{
+	$navLeft  = 'glyphicon glyphicon-chevron-left';
+	$navRight = 'glyphicon glyphicon-chevron-right';
+}
+elseif ($cck->getStyleParam('navigator') == 2)
+{
+	$navLeft  = 'fa fa-chevron-left';
+	$navRight = 'fa fa-chevron-right';
+}
+else
+{
+	$navLeft  = 'icon-prev';
+	$navRight = 'icon-next';
+}
+
 // -- Render
 if (!empty($items)) : ?>
-<div id="<?php echo $id; ?>" class="carousel-slide" data-ride="carousel">
+<div id="<?php echo $id; ?>" class="carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
   <?php for($i = 0; $i < $count; $i++) : ?>
     <li data-target="#<?php echo $id; ?>" data-slide-to="<?php echo $i ?>"<?php echo $i == 0 ? 'class="active"' : null;?>></li>
@@ -31,14 +47,14 @@ if (!empty($items)) : ?>
   </ol>
 	<div class="carousel-inner">
 	<?php foreach ($items as $key => $item) : ?>
-		<div class="item">
+		<div class="item<?php echo $key == 0 ? ' active' : null; ?>">
 			<?php echo $cck->renderItem($key); ?>
 		</div>
 	<?php endforeach; ?>
 	</div>
 	<?php if($count > 1): ?>
-  <a class="left carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-  <a class="right carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+  <a class="left carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="prev"><span class="<?php echo $navLeft; ?>"></span></a>
+  <a class="right carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="next"><span class="<?php echo $navRight; ?>"></span></a>
 <?php endif; ?>
 </div>
 <?php endif;

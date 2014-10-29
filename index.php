@@ -39,7 +39,7 @@ else
 
 // -- Render
 if (!empty($items)) : ?>
-<div id="<?php echo $id; ?>" class="carousel slide" data-ride="carousel">
+<div id="<?php echo $id; ?>" class="carousel<?php echo $cck->getStyleParam('event') == 1 ? ' slide' : null; ?>" data-ride="carousel">
 	<ol class="carousel-indicators">
   <?php for($i = 0; $i < $count; $i++) : ?>
     <li data-target="#<?php echo $id; ?>" data-slide-to="<?php echo $i ?>"<?php echo $i == 0 ? 'class="active"' : null;?>></li>
@@ -52,7 +52,7 @@ if (!empty($items)) : ?>
 		</div>
 	<?php endforeach; ?>
 	</div>
-	<?php if($count > 1): ?>
+	<?php if($count > 1 && $cck->getStyleParam('navigator') != -1) : ?>
   <a class="left carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="prev"><span class="<?php echo $navLeft; ?>"></span></a>
   <a class="right carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="next"><span class="<?php echo $navRight; ?>"></span></a>
 <?php endif; ?>

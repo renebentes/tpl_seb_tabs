@@ -31,10 +31,15 @@ elseif ($cck->getStyleParam('navigator') == 2)
 	$navLeft  = 'fa fa-chevron-left';
 	$navRight = 'fa fa-chevron-right';
 }
-else
+elseif ($cck->getStyleParam('navigator') == 0)
 {
 	$navLeft  = 'icon-prev';
 	$navRight = 'icon-next';
+}
+else
+{
+  $navLeft  = '';
+  $navRight = '';
 }
 
 // -- Render
@@ -45,7 +50,7 @@ if (!empty($items)) : ?>
     <li data-target="#<?php echo $id; ?>" data-slide-to="<?php echo $i ?>"<?php echo $i == 0 ? 'class="active"' : null;?>></li>
   <?php endfor; ?>
   </ol>
-	<div class="carousel-inner">
+	<div class="carousel-inner" role="listbox">
 	<?php foreach ($items as $key => $item) : ?>
 		<div class="item<?php echo $key == 0 ? ' active' : null; ?>">
 			<?php echo $cck->renderItem($key); ?>
@@ -53,8 +58,14 @@ if (!empty($items)) : ?>
 	<?php endforeach; ?>
 	</div>
 	<?php if($count > 1 && $cck->getStyleParam('navigator') != -1) : ?>
-  <a class="left carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="prev"><span class="<?php echo $navLeft; ?>"></span></a>
-  <a class="right carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="next"><span class="<?php echo $navRight; ?>"></span></a>
+  <a class="left carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="prev">
+  	<span class="<?php echo $navLeft; ?>"></span>
+  	<span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="next">
+  	<span class="<?php echo $navRight; ?>"></span>
+  	<span class="sr-only">Next</span>
+  </a>
 <?php endif; ?>
 </div>
 <?php endif;

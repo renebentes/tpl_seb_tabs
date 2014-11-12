@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.3" type="template" client="site" method="upgrade">
-	<name>seb_slideshow</name>
-	<creationDate>21/10/2014</creationDate>
+	<name>seb_tabs</name>
+	<creationDate>12/11/2014</creationDate>
   <author>Rene Bentes Pinto</author>
   <authorEmail>renebentes@yahoo.com.br</authorEmail>
   <authorUrl></authorUrl>
   <copyright>Copyright (C) 2014 Rene Bentes Pinto, Inc. All rights reserved.</copyright>
   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-  <version>0.1.1</version>
-  <description>TPL_SEB_SLIDESHOW_XML_DESCRIPTION</description>
+  <version>0.1.0</version>
+  <description>TPL_SEB_TABS_XML_DESCRIPTION</description>
 	<files>
 		<folder>css</folder>
 		<folder>fields</folder>
@@ -29,30 +29,22 @@
 		<filename>templateDetails.xml</filename>
 	</files>
 	<languages folder="languages">
-		<language tag="en-GB">en-GB/en-GB.tpl_seb_slideshow.ini</language>
-		<language tag="en-GB">en-GB/en-GB.tpl_seb_slideshow.sys.ini</language>
-		<language tag="pt-BR">pt-BR/pt-BR.tpl_seb_slideshow.ini</language>
-		<language tag="pt-BR">pt-BR/pt-BR.tpl_seb_slideshow.sys.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.tpl_seb_tabs.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.tpl_seb_tabs.sys.ini</language>
 	</languages>
 	<positions>
 		<position />
+			<position>tab</position>
+			<position>content</position>
 	</positions>
 	<config addfieldpath="/libraries/cck/construction/field">
 		<fields name="params">
-			<fieldset name="fields" label="TPL_SEB_SLIDESHOW_LEGEND_FIELDS">
-				<field name="cck_client_item" type="hidden" default="1" />
-				<field name="field_label" type="cck" construction="core_field_label" default="1" label="TPL_SEB_SLIDESHOW_SHOW_LABEL" description="" class="inputbox" />
-				<field name="field_description" type="cck" construction="core_field_description" default="0" label="TPL_SEB_SLIDESHOW_SHOW_DESCRIPTION" description="" class="inputbox" />
-				<field name="navigator" type="list" default="0" label="TPL_SEB_SLIDESHOW_NAVIGATOR_LABEL" description="TPL_SEB_SLIDESHOW_NAVIGATOR_DESC">
-					<option value="-1">JNONE</option>
-					<option value="0">TPL_SEB_SLIDESHOW_NAVIGATOR_ICON_VALUE</option>
-					<option value="1">TPL_SEB_SLIDESHOW_NAVIGATOR_GLYPH_VALUE</option>
-					<option value="2">TPL_SEB_SLIDESHOW_NAVIGATOR_FA_VALUE</option>
-				</field>
-				<field name="event" type="list" default="1" label="TPL_SEB_SLIDESHOW_EVENT_LABEL" description="TPL_SEB_SLIDESHOW_EVENT_DESC">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
+			<fieldset name="fields" label="TPL_SEB_TABS_LEGEND_FIELDS">
+				<field name="cck_client_item" type="hidden" default="0" />
+				<field name="class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_TABS_CLASS" description="" class="inputbox" />
+				<field name="class_content" type="cck" construction="core_dev_text" default="" label="TPL_SEB_TABS_CLASS_CONTENT" description="" class="inputbox" />
+				<field name="field_label" type="cck" construction="core_field_label" default="1" label="TPL_SEB_TABS_SHOW_LABEL" description="" class="inputbox" />
+				<field name="field_description" type="cck" construction="core_field_description" default="0" label="TPL_SEB_TABS_SHOW_DESCRIPTION" description="" class="inputbox" />
 			</fieldset>
 		</fields>
 	</config>

@@ -17,10 +17,10 @@ if ($cck->initialize() === false)
 	return;
 
 // -- Prepare
-$items = $cck->getItems();
-$count = count($items);
-$id    = !empty($cck->id_class) ? trim($cck->id_class) : 'genericTab';
-$i     = 0;
+$items     = $cck->getItems();
+$count     = count($items);
+$id        = !empty($cck->id_class) ? trim($cck->id_class) : 'genericTab';
+$i         = 0;
 $positions = $cck->getPositions();
 
 

@@ -1,7 +1,7 @@
 <?php
 /**
- * @package     Thumbs
- * @subpackage  tpl_seb_thumbs
+ * @package     Tabs
+ * @subpackage  tpl_seb_tabs
  * @copyright   Copyright (C) 2014 Rene Bentes Pinto, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see http://www.gnu.org/licenses/gpl-2.0.html
  */

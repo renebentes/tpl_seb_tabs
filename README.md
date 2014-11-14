@@ -1,7 +1,7 @@
 Slideshow - tpl_seb_slideshow
 =============
 
-Template Seblod para exibição de slideshow de artigos.
+Template Seblod para visualização de Conteúdo em Abas.
 
 Requirements
 ------------
@@ -21,7 +21,7 @@ License
 Bugs/Requests
 -------------
 
-You can [report a bug or request a feature here](http://github.com/renebentes/tpl_seb_slideshow/issues)
+You can [report a bug or request a feature here](http://github.com/renebentes/tpl_seb_tabs/issues)
 
 TODO
 ----
@@ -31,4 +31,4 @@ TODO
 Release Notes
 -------------
 
-You can [see the release notes here](http://github.com/renebentes/tpl_seb_slideshow/blob/master/CHANGELOG.md)
+You can [see the release notes here](http://github.com/renebentes/tpl_seb_tabs/blob/master/CHANGELOG.md)

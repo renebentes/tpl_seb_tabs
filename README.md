@@ -1,4 +1,4 @@
-Slideshow - tpl_seb_slideshow
+Tabs - tpl_seb_tabs
 =============
 
 Template Seblod para visualização de Conteúdo em Abas.
